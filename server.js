@@ -4,11 +4,11 @@ const path = require('path');
 const app = express();
 
 
-app.use(express.static(__dirname + '/dist/client-command'));
+app.use(express.static(__dirname + '/dist/ClientCommand'));
 
 app.get('/*', function(req,res) {
     
-res.sendFile(path.join(__dirname+'/dist/client-command/index.html'));
+res.sendFile(path.join(__dirname+'/dist/ClientCommand/index.html'));
 });
 
 app.listen(process.env.PORT || 8080);
