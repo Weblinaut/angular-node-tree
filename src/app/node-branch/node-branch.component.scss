@@ -1,0 +1,23 @@
+ul, li { list-style-type:none; }
+
+ul {margin-top:4px;}
+
+.node {
+    padding: 8px;
+    border-radius: 4px;
+    margin: 4px;
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+        border-radius:4px;
+        text-transform: uppercase;
+        padding:4px 8px;
+        margin-right:2px;
+        background: white;
+        cursor:pointer;
+    }
+}

@@ -1,0 +1,22 @@
+<div class="node" [ngStyle]="{'background-color': (node && node.color)}">
+  <div>
+    {{node ? '' : 'No existing nodes. why not create one?'}}
+    {{node ? ("Score: " + node.score) : ''}}
+  </div>
+
+  <div class="actions">
+    <button (click)="createNode()">New Branch</button>
+    <button *ngIf="toggleColorVisible" (click)="toggleNodeColor()">Toggle Color</button>
+    <button *ngIf="deletable" (click)="removeNode()">Remove Branch</button>
+  </div>
+</div>
+
+<ul *ngIf="node">
+  <li *ngFor="let child of node.children">
+    <app-node-branch [node]="child"></app-node-branch>
+  </li>
+</ul>
+
+<p *ngIf="node && isRootNode()">
+  Total score: {{totalScore}}
+</p>
